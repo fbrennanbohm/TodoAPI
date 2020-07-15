@@ -23,11 +23,12 @@ namespace TodoApi
 
 
             services.AddControllers();
-
+            
+            //DB hookup
             services.AddDbContext<TodoContext>(options =>
              options.UseSqlServer(Configuration.GetConnectionString("TodoConnection")));
 
-            //REgister the Swagger generator
+            //Swagger hookup
             services.AddSwaggerGen();
 
         }
